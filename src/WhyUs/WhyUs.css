@@ -1,0 +1,188 @@
+/* Root section: Full width, no overflow issues, clean flex layout */
+.whyus-section {
+  display: flex;
+  width: 100vw;
+  min-height: 380px;
+  background: #fff;
+  font-family: 'Montserrat', Arial, sans-serif;
+  align-items: stretch;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden; /* prevent horizontal scroll */
+}
+
+/* Left column (features area) */
+.whyus-square-col {
+  flex: 0 0 65%;
+  min-width: 320px;
+  max-width: 900px;
+  display: flex;
+  align-items: stretch;
+  background: none;
+  padding: 12px;
+  box-sizing: border-box;
+}
+
+/* Grid layout for features */
+.whyus-square {
+  background: linear-gradient(135deg, #faf7f1 75%, #e8d8b9 100%);
+  border-radius: 18px 0 0 18px;
+  border: 1px solid #f3e7d4;
+  box-shadow: 0 2px 10px rgba(185, 128, 58, 0.07);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  padding: 18px;
+  width: 100%;
+  align-items: stretch;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Individual feature box */
+.whyus-feature {
+  background: #fff;
+  border: 1px solid #f7e6c7;
+  border-radius: 12px;
+  box-shadow: 0 1px 5px rgba(185, 128, 58, 0.05);
+  padding: 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s, transform 0.2s;
+  cursor: default;
+  min-height: 120px;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.whyus-feature:hover {
+  box-shadow: 0 4px 15px rgba(185, 128, 58, 0.15);
+  transform: translateY(-3px) scale(1.02);
+  border-color: #e0c08d;
+}
+
+/* Icon inside feature */
+.whyus-feature-icon {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  background: linear-gradient(135deg, #e0c08d 40%, #b9803a 100%);
+  color: #fff;
+  border-radius: 50%;
+  padding: 6px 10px;
+  box-shadow: 0 1px 4px #e0c08d33;
+  user-select: none;
+}
+
+/* Feature title and description */
+.whyus-feature-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #b9803a;
+  margin-bottom: 4px;
+  letter-spacing: 0.3px;
+}
+
+.whyus-feature-desc {
+  font-size: 0.94rem;
+  color: #23213a;
+  opacity: 0.92;
+  line-height: 1.4;
+}
+
+/* Right column (image with overlayed question) */
+.whyus-image-col-bg {
+  flex: 0 0 35%;
+  max-width: 35vw;
+  min-width: 180px;
+  min-height: 340px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 0 18px 18px 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.whyus-image-col-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(35, 33, 58, 0.38) 70%, rgba(185,128,58,0.12) 100%);
+  border-radius: 0 18px 18px 0;
+  z-index: 1;
+}
+
+/* The text/question inside image section */
+.whyus-question {
+  position: relative;
+  z-index: 2;
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 900;
+  color: #fffbe7;
+  text-shadow: 0 1px 8px #23213a;
+  margin: 0;
+  letter-spacing: 0.5px;
+  text-align: center;
+  padding: 16px 12px;
+  background: rgba(185,128,58,0.12);
+  border-radius: 12px;
+  align-self: center;
+  min-width: 60%;
+  box-sizing: border-box;
+}
+
+/* Media Queries: Tablet and mobile responsiveness */
+@media (max-width: 1050px) {
+  .whyus-section {
+    flex-direction: column;
+    min-height: unset;
+  }
+
+  .whyus-square-col, .whyus-image-col-bg {
+    max-width: 100%;
+    border-radius: 0;
+    height: auto;
+    padding: 0;
+  }
+
+  .whyus-square {
+    border-radius: 18px 18px 0 0;
+    height: auto;
+  }
+
+  .whyus-image-col-bg {
+    border-radius: 0 0 18px 18px;
+    min-height: 200px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .whyus-section {
+    padding: 12px 0;
+  }
+
+  .whyus-square {
+    grid-template-columns: 1fr;
+    padding: 8px;
+  }
+
+  .whyus-image-col-bg {
+    min-height: 120px;
+  }
+
+  .whyus-question {
+    font-size: 1.2rem;
+    padding: 10px 6px;
+    min-width: unset;
+  }
+}

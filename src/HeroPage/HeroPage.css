@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700,900&display=swap');
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+  overflow: hidden;
+  top: 0vh;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(35,33,58,0.38);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  color: #fff;
+  padding: 60px 10px 80px 10px;
+}
+
+.hero-content h1 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 900;
+  font-size: 2.8rem;
+  margin-bottom: 18px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin-bottom: 38px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.hero-search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.hero-search-input {
+  flex: 1;
+  font-size: 1.15rem;
+  padding: 16px 22px;
+  border: none;
+  border-radius: 30px 0 0 30px;
+  outline: none;
+  background: #fff;
+  color: #23213a;
+  min-width: 0;
+  width: 280px;
+}
+
+.hero-search-btn {
+  font-size: 1.1rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 700;
+  padding: 16px 32px;
+  border: none;
+  border-radius: 0 30px 30px 0;
+  background: #b9803a;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: -2px;
+}
+
+.hero-search-btn:hover {
+  background: #a06a2d;
+}
+
+@media (max-width: 700px) {
+  .hero-content h1 { font-size: 1.5rem; }
+  .hero-content p { font-size: 1rem; }
+  .hero-search-form { max-width: 95vw; }
+  .hero-search-input { font-size: 1rem; padding: 12px 10px; }
+  .hero-search-btn { font-size: 1rem; padding: 12px 18px; }
+}

@@ -1,0 +1,15 @@
+.homepage {
+  background: rgb(248, 248, 248);
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;           /* Disable all scrolling */
+  scrollbar-width: none;      /* Firefox */
+  -ms-overflow-style: none;   /* IE and Edge */
+}
+
+/* Hide scrollbar for WebKit browsers */
+.homepage::-webkit-scrollbar {
+  display: none;
+}

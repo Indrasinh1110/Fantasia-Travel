@@ -1,0 +1,197 @@
+/* ===== Destinations Section CSS ===== */
+
+/* Root container */
+.destination-root {
+  width: 100%;
+  top:0vh;
+  padding-top: 3vh;
+  position: relative;
+  margin: 0%;
+  background: #fff7e8;
+  padding-bottom: 48px;
+}
+
+/* ---- Header & Punchline ---- */
+.dest-card-header {
+  text-align: center;
+  margin-bottom: 32px;
+  margin-top: 0;
+  padding-top: 24px;
+}
+.dest-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  color: #b9803a;
+  font-weight: 900;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+.dest-card-punchline {
+  font-size: 1.18rem;
+  color: #23213a;
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  opacity: 0.85;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ---- Card Grid ---- */
+.dest-card-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 32px;
+  margin-bottom: 60px;
+}
+.dest-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  width: 95vw;
+  max-width: 1100px;
+}
+.dest-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 14px rgba(34,34,34,0.09);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.dest-card:hover {
+  box-shadow: 0 8px 24px rgba(185,128,58,0.13);
+  transform: translateY(-6px) scale(1.02);
+}
+.dest-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background: #eee;
+}
+.dest-card-body {
+  padding: 22px 20px 18px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.dest-card h3 {
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #23213a;
+  margin-bottom: 0;
+}
+.dest-card-sub {
+  color: #ffffff;
+  font-size: 0.97rem;
+  margin-bottom: 2px;
+}
+.dest-card p {
+  color: #555;
+  font-size: 1rem;
+  flex: 1;
+  margin: 0 0 6px 0;
+}
+.dest-card-link {
+  color: #b9803a;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s;
+}
+.dest-card-link:hover {
+  color: #a06a2d;
+  text-decoration: underline;
+}
+
+/* ---- Modern Destination Image Grid ---- */
+.dest-grid-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.dest-grid-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.3rem;
+  color: #b9803a;
+  margin-bottom: 22px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-align: center;
+}
+.dest-image-grid {
+  display: flex;
+  gap: 22px;
+  justify-content: center;
+}
+.dest-image-grid-col {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  flex: 1;
+}
+.dest-image-grid-col.tall {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.dest-image-card {
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 2px 14px rgba(34,34,34,0.09);
+  min-height: 180px;
+  background: #eee;
+}
+.dest-image-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.87);
+  transition: filter 0.2s;
+}
+.dest-image-card.tall-card img {
+  height: 390px;
+  min-height: 390px;
+}
+.dest-image-card span {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  color: #fff;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(34,34,34,0.6);
+  letter-spacing: 1px;
+  background: rgba(0,0,0,0.14);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+.dest-image-card:hover img {
+  filter: brightness(0.75);
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 900px) {
+  .dest-image-grid {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .dest-image-card.tall-card img {
+    height: 220px;
+    min-height: 220px;
+  }
+}
+@media (max-width: 600px) {
+  .dest-card-grid { grid-template-columns: 1fr; }
+  .dest-image-grid { flex-direction: column; }
+  .dest-image-card img, .dest-image-card.tall-card img { height: 140px; min-height: 140px; }
+  .dest-grid-title, .dest-card-title { font-size: 1.3rem; }
+}
