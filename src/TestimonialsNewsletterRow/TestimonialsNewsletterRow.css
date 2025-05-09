@@ -1,0 +1,184 @@
+/* --- Container for the two sections side by side --- */
+.row-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;      /* Both boxes have equal height if possible */
+  gap: 2.5rem;
+  margin: 2rem auto;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 1100px;         /* Prevents stretching too wide on large screens */
+}
+
+/* --- Testimonial Box Styling --- */
+.testimonial-box {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 2.5rem 2rem;
+  max-width: 420px;
+  min-width: 320px;
+  flex: 1 1 340px;           /* Allows responsive resizing */
+  color: #222;
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #222;
+  gap: 0.5rem;
+}
+
+.testimonial-title {
+  margin-left: 0.5rem;
+}
+
+.testimonial-quote {
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-style: italic;
+}
+
+.testimonial-quote footer {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  color: #2e3a59;
+  font-style: normal;
+}
+
+.testimonial-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.testimonial-arrow {
+  background: #eaeaea;
+  border: none;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #222;
+  transition: background 0.2s;
+}
+
+.testimonial-arrow:hover {
+  background: #b1904f;
+  color: #fff;
+}
+
+/* --- Newsletter Box Styling --- */
+.newsletter.light-theme {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
+  max-width: 420px;
+  min-width: 320px;
+  flex: 1 1 340px;           /* Allows responsive resizing */
+  color: #7b7676;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid #eaeaea;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+/* Logo & Title */
+.newsletter-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.logo-emoji {
+  font-size: 2rem;
+  margin-right: 0.6rem;
+}
+
+.newsletter-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #222;
+}
+
+/* Description Text */
+.newsletter-desc {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.highlight-text {
+  color: #b1904f;
+  font-weight: 500;
+}
+
+/* Form Styling */
+.newsletter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: border 0.3s ease;
+}
+
+.newsletter-input:focus {
+  border-color: #b1904f;
+}
+
+/* Button Styling */
+.newsletter-submit {
+  padding: 0.75rem 1.5rem;
+  background-color: #b1904f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-submit:hover {
+  background-color: #a08141;
+}
+
+/* --- Responsive: Stack on small screens --- */
+@media (max-width: 900px) {
+  .row-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    max-width: 100%;
+  }
+  .testimonial-box,
+  .newsletter.light-theme {
+    max-width: 95vw;
+    min-width: 0;
+    width: 100%;
+  }
+}
