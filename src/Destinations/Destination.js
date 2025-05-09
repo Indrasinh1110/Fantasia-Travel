@@ -5,7 +5,6 @@ import './Destination.css';
 const getDummyImage = (text = "Image Not Available") =>
     `https://via.placeholder.com/600x400/eee/23213a?text=${encodeURIComponent(text)}`;
 
-
 // Section 1: Modern grid data
 const destinationGrid = [
     {
@@ -29,6 +28,7 @@ const destinationGrid = [
         name: "Phuket, Thailand"
     },
 ];
+
 // Section 2: Card grid data
 const destinationCards = [
     {
@@ -75,7 +75,6 @@ const destinationCards = [
     },
 ];
 
-
 const Destinations = () => (
     <div className="destination-root">
 
@@ -83,49 +82,53 @@ const Destinations = () => (
         <div className="dest-grid-section">
             <h2 className="dest-grid-title">Explore Our Destinations</h2>
             <div className="dest-image-grid">
-                <div className="dest-image-grid-col">
-                    <div className="dest-image-card">
-                        <img
-                            src={destinationGrid[0].img || getDummyImage(destinationGrid[0].name)}
-                            alt={destinationGrid[0].name}
-                            onError={e => { e.target.onerror = null; e.target.src = getDummyImage(destinationGrid[0].name); }}
-                        />
+                <div className="dest-image-card small-card" style={{ gridArea: 'small1' }}>
+                    <img
+                        src={destinationGrid[0].img || getDummyImage(destinationGrid[0].name)}
+                        alt={destinationGrid[0].name}
+                        onError={e => { e.target.onerror = null; e.target.src = getDummyImage(destinationGrid[0].name); }}
+                    />
+                    <div className="dest-card-overlay">
                         <span>{destinationGrid[0].name}</span>
                     </div>
-                    <div className="dest-image-card">
-                        <img
-                            src={destinationGrid[1].img || getDummyImage(destinationGrid[1].name)}
-                            alt={destinationGrid[1].name}
-                            onError={e => { e.target.onerror = null; e.target.src = getDummyImage(destinationGrid[1].name); }}
-                        />
+                </div>
+                <div className="dest-image-card small-card" style={{ gridArea: 'small2' }}>
+                    <img
+                        src={destinationGrid[1].img || getDummyImage(destinationGrid[1].name)}
+                        alt={destinationGrid[1].name}
+                        onError={e => { e.target.onerror = null; e.target.src = getDummyImage(destinationGrid[1].name); }}
+                    />
+                    <div className="dest-card-overlay">
                         <span>{destinationGrid[1].name}</span>
                     </div>
                 </div>
-                <div className="dest-image-grid-col tall">
-                    <div className="dest-image-card tall-card">
-                        <img
-                            src={destinationGrid[3].img || getDummyImage(destinationGrid[3].name)}
-                            alt={destinationGrid[3].name}
-                            onError={e => { e.target.onerror = null; e.target.src = getDummyImage(destinationGrid[3].name); }}
-                        />
+                <div className="dest-image-card large-card" style={{ gridArea: 'large' }}>
+                    <img
+                        src={destinationGrid[3].img || getDummyImage(destinationGrid[3].name)}
+                        alt={destinationGrid[3].name}
+                        onError={e => { e.target.onerror = null; e.target.src = getDummyImage(destinationGrid[3].name); }}
+                    />
+                    <div className="dest-card-overlay">
                         <span>{destinationGrid[3].name}</span>
                     </div>
                 </div>
-                <div className="dest-image-grid-col">
-                    <div className="dest-image-card">
-                        <img
-                            src={destinationGrid[2].img || getDummyImage(destinationGrid[2].name)}
-                            alt={destinationGrid[2].name}
-                            onError={e => { e.target.onerror = null; e.target.src = getDummyImage(destinationGrid[2].name); }}
-                        />
+                <div className="dest-image-card small-card" style={{ gridArea: 'small3' }}>
+                    <img
+                        src={destinationGrid[2].img || getDummyImage(destinationGrid[2].name)}
+                        alt={destinationGrid[2].name}
+                        onError={e => { e.target.onerror = null; e.target.src = getDummyImage(destinationGrid[2].name); }}
+                    />
+                    <div className="dest-card-overlay">
                         <span>{destinationGrid[2].name}</span>
                     </div>
-                    <div className="dest-image-card">
-                        <img
-                            src={destinationGrid[4].img || getDummyImage(destinationGrid[4].name)}
-                            alt={destinationGrid[4].name}
-                            onError={e => { e.target.onerror = null; e.target.src = getDummyImage(destinationGrid[4].name); }}
-                        />
+                </div>
+                <div className="dest-image-card small-card" style={{ gridArea: 'small4' }}>
+                    <img
+                        src={destinationGrid[4].img || getDummyImage(destinationGrid[4].name)}
+                        alt={destinationGrid[4].name}
+                        onError={e => { e.target.onerror = null; e.target.src = getDummyImage(destinationGrid[4].name); }}
+                    />
+                    <div className="dest-card-overlay">
                         <span>{destinationGrid[4].name}</span>
                     </div>
                 </div>
@@ -148,11 +151,13 @@ const Destinations = () => (
                             alt={card.title}
                             onError={e => { e.target.onerror = null; e.target.src = getDummyImage(card.title); }}
                         />
-                        <div className="dest-card-body">
-                            <h3>{card.title}</h3>
-                            <div className="dest-card-sub">{card.subtitle}</div>
-                            <p>{card.desc}</p>
-                            <a href={card.link} className="dest-card-link">View Details</a>
+                        <div className="dest-card-overlay">
+                            <div className="dest-card-body">
+                                <h3>{card.title}</h3>
+                                <div className="dest-card-sub">{card.subtitle}</div>
+                                <p>{card.desc}</p>
+                                <a href={card.link} className="dest-card-link">View Details</a>
+                            </div>
                         </div>
                     </div>
                 ))}

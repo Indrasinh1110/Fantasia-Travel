@@ -1,30 +1,50 @@
-/* --- Container for the two sections side by side --- */
+/* Container for the two sections side by side */
 .row-container {
   display: flex;
   justify-content: center;
-  align-items: stretch;      /* Both boxes have equal height if possible */
+  align-items: stretch;
   gap: 2.5rem;
   margin: 2rem auto;
   flex-wrap: wrap;
   width: 100%;
-  max-width: 1100px;         /* Prevents stretching too wide on large screens */
+  max-width: 1100px;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1.2s cubic-bezier(0.23, 1, 0.32, 1) 0.2s forwards;
 }
 
-/* --- Testimonial Box Styling --- */
+/* Fade-in-up animation */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Testimonial Box Styling */
 .testimonial-box {
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  background: linear-gradient(135deg, #f9fafb 60%, #e8e0c4 100%);
+  border-radius: 16px;
+  box-shadow: 0 8px 36px rgba(34, 34, 34, 0.10), 0 1.5px 8px rgba(177, 144, 79, 0.08);
   padding: 2.5rem 2rem;
   max-width: 420px;
   min-width: 320px;
-  flex: 1 1 340px;           /* Allows responsive resizing */
+  flex: 1 1 340px;
   color: #222;
-  border: 1px solid #eaeaea;
+  border: 1px solid #f3efe7;
   display: flex;
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1.1s cubic-bezier(0.23, 1, 0.32, 1) 0.4s forwards;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.testimonial-box:hover {
+  box-shadow: 0 12px 48px rgba(34, 34, 34, 0.18), 0 3px 12px rgba(177, 144, 79, 0.10);
+  transform: translateY(-6px) scale(1.03);
 }
 
 .testimonial-header {
@@ -35,6 +55,7 @@
   margin-bottom: 1.5rem;
   color: #222;
   gap: 0.5rem;
+  letter-spacing: 0.02em;
 }
 
 .testimonial-title {
@@ -42,17 +63,26 @@
 }
 
 .testimonial-quote {
-  font-size: 1.1rem;
+  font-size: 1.18rem;
   color: #222;
   margin-bottom: 1.5rem;
   text-align: center;
   font-style: italic;
+  line-height: 1.7;
+  opacity: 0;
+  animation: fadeIn 1.2s 0.7s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }
 
 .testimonial-quote footer {
   margin-top: 0.5rem;
   font-size: 1rem;
-  color: #2e3a59;
+  color: #b1904f;
   font-style: normal;
 }
 
@@ -62,41 +92,51 @@
 }
 
 .testimonial-arrow {
-  background: #eaeaea;
+  background: #f3efe7;
   border: none;
   border-radius: 50%;
   width: 38px;
   height: 38px;
   font-size: 1.2rem;
   cursor: pointer;
-  color: #222;
-  transition: background 0.2s;
+  color: #b1904f;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  box-shadow: 0 1px 4px rgba(177, 144, 79, 0.07);
 }
 
 .testimonial-arrow:hover {
   background: #b1904f;
   color: #fff;
+  transform: scale(1.11);
 }
 
-/* --- Newsletter Box Styling --- */
+/* Newsletter Box Styling */
 .newsletter.light-theme {
-  background-color: #ffffff;
+  background: linear-gradient(135deg, #fff 70%, #f3efe7 100%);
   padding: 2.5rem;
-  border-radius: 12px;
+  border-radius: 16px;
   max-width: 420px;
   min-width: 320px;
-  flex: 1 1 340px;           /* Allows responsive resizing */
+  flex: 1 1 340px;
   color: #7b7676;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
-  border: 1px solid #eaeaea;
+  box-shadow: 0 8px 36px rgba(34, 34, 34, 0.10), 0 1.5px 8px rgba(177, 144, 79, 0.08);
+  border: 1px solid #f3efe7;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   box-sizing: border-box;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeInUp 1.1s cubic-bezier(0.23, 1, 0.32, 1) 0.6s forwards;
+  transition: box-shadow 0.3s, transform 0.3s;
 }
 
-/* Logo & Title */
+.newsletter.light-theme:hover {
+  box-shadow: 0 12px 48px rgba(34, 34, 34, 0.18), 0 3px 12px rgba(177, 144, 79, 0.10);
+  transform: translateY(-6px) scale(1.03);
+}
+
 .newsletter-logo {
   display: flex;
   align-items: center;
@@ -106,6 +146,11 @@
 .logo-emoji {
   font-size: 2rem;
   margin-right: 0.6rem;
+  transition: transform 0.3s;
+}
+
+.newsletter.light-theme:hover .logo-emoji {
+  transform: rotate(-8deg) scale(1.15);
 }
 
 .newsletter-title {
@@ -114,9 +159,8 @@
   color: #222;
 }
 
-/* Description Text */
 .newsletter-desc {
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.7;
   margin-bottom: 1.5rem;
   color: #555;
@@ -127,7 +171,6 @@
   font-weight: 500;
 }
 
-/* Form Styling */
 .newsletter-form {
   display: flex;
   flex-wrap: wrap;
@@ -144,30 +187,34 @@
   outline: none;
   background-color: #f9f9f9;
   color: #333;
-  transition: border 0.3s ease;
+  transition: border 0.3s, box-shadow 0.3s;
+  box-shadow: 0 1px 4px rgba(177, 144, 79, 0.04);
 }
 
 .newsletter-input:focus {
   border-color: #b1904f;
+  box-shadow: 0 2px 8px rgba(177, 144, 79, 0.10);
 }
 
-/* Button Styling */
 .newsletter-submit {
   padding: 0.75rem 1.5rem;
-  background-color: #b1904f;
+  background: linear-gradient(90deg, #b1904f 60%, #e8e0c4 100%);
   color: white;
   border: none;
   border-radius: 6px;
   font-weight: 500;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 1px 4px rgba(177, 144, 79, 0.07);
 }
 
 .newsletter-submit:hover {
-  background-color: #a08141;
+  background: linear-gradient(90deg, #a08141 70%, #b1904f 100%);
+  transform: scale(1.07);
+  box-shadow: 0 2px 8px rgba(177, 144, 79, 0.15);
 }
 
-/* --- Responsive: Stack on small screens --- */
+/* Responsive: Stack on small screens */
 @media (max-width: 900px) {
   .row-container {
     flex-direction: column;
