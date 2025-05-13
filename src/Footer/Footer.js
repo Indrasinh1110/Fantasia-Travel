@@ -1,51 +1,46 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Footer.css';
 
 const Footer = () => {
-    const [isAdvisor, setIsAdvisor] = useState(true);
+    // const handleSubscribe = (e) => {
+    //     e.preventDefault();
+    //     alert('Subscribed successfully!');
+    // };
 
-    const handleAdvisorToggle = (value) => {
-        setIsAdvisor(value);
-    };
-
-    const handleSubscribe = (e) => {
-        e.preventDefault();
-        alert('Subscribed successfully!');
-    };
-
-    return (<div className='footer'>
+    return (
+        <div className='footer'>
             {/* Main Footer Section */}
             <footer>
                 <div className="footer-main">
                     <div className="footer-col">
                         <h4>Company</h4>
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Fantasia Philanthropy</a></li>
-                            <li><a href="#">Press</a></li>
-                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="/about-us">About Us</a></li>
+                            <li><a href="/fantasia-philanthropy">Fantasia Philanthropy</a></li>
+                            <li><a href="/press">Press</a></li>
+                            <li><a href="/contact-us">Contact Us</a></li>
                         </ul>
                     </div>
                     <div className="footer-col">
                         <h4>Services</h4>
                         <ul>
-                            <li><a href="#">Travel Brochures</a></li>
-                            <li><a href="#">Fantasia App</a></li>
-                            <li><a href="#">Trade Hub</a></li>
-                            <li><a href="#">Fantasia DMC Hub</a></li>
-                            <li><a href="#">Concierge Club</a></li>
+                            <li><a href="/travel-brochures">Travel Brochures</a></li>
+                            <li><a href="/fantasia-app">Fantasia App</a></li>
+                            <li><a href="/trade-hub">Trade Hub</a></li>
+                            <li><a href="/fantasia-dmc-hub">Fantasia DMC Hub</a></li>
+                            <li><a href="/concierge-club">Concierge Club</a></li>
                         </ul>
                     </div>
                     <div className="footer-col">
                         <h4>Policies and Legal</h4>
                         <ul>
-                            <li><a href="#">Booking Terms and Conditions</a></li>
-                            <li><a href="#">Terms of Use</a></li>
-                            <li><a href="#">Cookie Preferences</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Data Processing Agreement</a></li>
-                            <li><a href="#">Modern Slavery Act</a></li>
-                            <li><a href="#">Email Opt-out</a></li>
+                            <li><a href="/booking-terms">Booking Terms and Conditions</a></li>
+                            <li><a href="/terms-of-use">Terms of Use</a></li>
+                            <li><a href="/cookie-preferences">Cookie Preferences</a></li>
+                            <li><a href="/privacy-policy">Privacy Policy</a></li>
+                            <li><a href="/data-processing-agreement">Data Processing Agreement</a></li>
+                            <li><a href="/modern-slavery-act">Modern Slavery Act</a></li>
+                            <li><a href="/email-opt-out">Email Opt-out</a></li>
                         </ul>
                     </div>
                     <div className="footer-col">
@@ -68,11 +63,11 @@ const Footer = () => {
                         <span>© 2025 Fantasia Travel. Life, Well-Traveled.</span>
                     </div>
                     <div>
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Use</a>
+                        <a href="/privacy-policy">Privacy Policy</a>
+                        <a href="/terms-of-use">Terms of Use</a>
                     </div>
                 </div>
-        </footer>
+            </footer>
         </div>
     );
 };

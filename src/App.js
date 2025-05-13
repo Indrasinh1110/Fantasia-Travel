@@ -1,9 +1,15 @@
 import './App.css';
-import HomePage from './HomePage/HomePage';
+import Contactus from './Pages/Contactus/Contactus';
+import HomePage from './Pages/HomePage/HomePage';
+
 
 function App() {
   return (
-    <div className="App"><HomePage/></div>
+    <div className="App">
+      
+    <HomePage/>
+    {/* <Contactus/> */}
+    </div>
   );
 }
 export default App;

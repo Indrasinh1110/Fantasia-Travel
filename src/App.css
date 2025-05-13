@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   position: absolute;
-  overflow: hidden;         /* Hide all overflows */
+          /* Hide all overflows */
   scrollbar-width: none;    /* Firefox */
   -ms-overflow-style: none; /* IE and Edge */
 }

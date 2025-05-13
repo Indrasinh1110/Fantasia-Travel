@@ -1,96 +1,147 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:700,900&display=swap');
-
 .hero-section {
   position: relative;
   min-height: 100vh;
-  width: 100%;
+  padding-top: 10vh;
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
-  background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-  overflow: hidden;
-  top: 0vh;
+  background: url('/public/images/home-bg.jpg') center/cover no-repeat;
 }
 
 .hero-bg-overlay {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(35,33,58,0.38);
+  inset: 0;
+  background: rgba(35,33,58,0.5);
   z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  text-align: center;
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
   color: #fff;
-  padding: 60px 10px 80px 10px;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .hero-content h1 {
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: 900;
-  font-size: 2.8rem;
-  margin-bottom: 18px;
-  color: #fff;
-  letter-spacing: 1px;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
 }
 
 .hero-content p {
-  font-size: 1.25rem;
-  font-family: 'Montserrat', Arial, sans-serif;
-  margin-bottom: 38px;
-  color: #fff;
-  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 .hero-search-form {
   display: flex;
   justify-content: center;
+  width: 100%;
+}
+
+.hero-searchbar-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 450px;
+  display: flex;
+
   align-items: center;
-  gap: 0;
-  max-width: 500px;
-  margin: 0 auto;
 }
 
 .hero-search-input {
-  flex: 1;
-  font-size: 1.15rem;
-  padding: 16px 22px;
+  width: 100%;
+  padding: 0.9rem 1.2rem;
+  border-radius: 2rem 0 0 2rem;
   border: none;
-  border-radius: 30px 0 0 30px;
   outline: none;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 12px rgba(35,33,58,0.08);
   background: #fff;
   color: #23213a;
-  min-width: 0;
-  width: 280px;
+  transition: box-shadow 0.2s;
+}
+
+.hero-search-input:focus {
+  box-shadow: 0 4px 24px rgba(35,33,58,0.15);
 }
 
 .hero-search-btn {
-  font-size: 1.1rem;
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-weight: 700;
-  padding: 16px 32px;
+  padding: 1rem 1.4rem;
   border: none;
-  border-radius: 0 30px 30px 0;
-  background: #b9803a;
-  color: #fff;
+  border-radius: 0 2rem 2rem 0;
+  background: #f9d923;
+  color: #23213a;
+  font-weight: bold;
+  font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s;
-  margin-left: -2px;
+  margin-left: -1px; /* Removes gap between input and button */
+  width: 40%;
+  position: relative;
+  z-index: 2;
 }
 
-.hero-search-btn:hover {
-  background: #a06a2d;
+
+/* Dropdown Styles */
+.hero-search-dropdown {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 110%;
+  background: #fff;
+  color: #23213a;
+  border-radius: 0 0 1rem 1rem;
+  box-shadow: 0 4px 24px 0 rgba(35,33,58,0.12);
+  z-index: 10;
+  margin-top: 0.2rem;
+  max-height: calc(60vh - 210px); /* Ensures dropdown never exceeds hero-section */
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #f9d923 #f3f3f3;
 }
 
-@media (max-width: 700px) {
-  .hero-content h1 { font-size: 1.5rem; }
-  .hero-content p { font-size: 1rem; }
-  .hero-search-form { max-width: 95vw; }
-  .hero-search-input { font-size: 1rem; padding: 12px 10px; }
-  .hero-search-btn { font-size: 1rem; padding: 12px 18px; }
+.hero-search-dropdown::-webkit-scrollbar {
+  width: 8px;
+  background: #f3f3f3;
+}
+.hero-search-dropdown::-webkit-scrollbar-thumb {
+  background: #f9d923;
+  border-radius: 4px;
+}
+
+.hero-search-dropdown-item {
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  font-size: 1.05rem;
+}
+.hero-search-dropdown-item:hover,
+.hero-search-dropdown-item:active {
+  background: #f9d923;
+  color: #23213a;
+}
+
+.hero-search-dropdown-item.no-result {
+  color: #aaa;
+  cursor: default;
+  background: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  .hero-content h1 {
+      font-size: 1.5rem;
+  }
+  .hero-searchbar-wrapper {
+      max-width: 100%;
+  }
+  .hero-search-input, .hero-search-btn {
+      font-size: 1rem;
+      padding: 0.7rem 1rem;
+  }
+  .hero-search-dropdown {
+      font-size: 0.95rem;
+      max-height: calc(40vh - 140px);
+  }
 }

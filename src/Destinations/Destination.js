@@ -5,163 +5,94 @@ import './Destination.css';
 const getDummyImage = (text = "Image Not Available") =>
     `https://via.placeholder.com/600x400/eee/23213a?text=${encodeURIComponent(text)}`;
 
-// Section 1: Modern grid data
-const destinationGrid = [
-    {
-        img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
-        name: "Venice, Italy"
-    },
-    {
-        img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
-        name: "Florence, Italy"
-    },
-    {
-        img: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&q=80",
-        name: "Milan, Italy"
-    },
-    {
-        img: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=600&q=80",
-        name: "Rome, Italy"
-    },
-    {
-        img: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&q=80",
-        name: "Phuket, Thailand"
-    },
-];
-
-// Section 2: Card grid data
+// All 9 cards (Italy, India, Thailand)
 const destinationCards = [
     {
-        img: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=600&q=80",
-        title: "London Executive Meetings",
-        subtitle: "Europe · Meetings",
-        desc: "Host your next board meeting in the heart of London. Premium venues, seamless logistics, and cultural add-ons.",
+        img: "/images/italy1.jpg",
+        title: "Grand Canal & Santa Maria della Salute",
+        subtitle: "Venice, Italy · Iconic Views",
+        desc: "Experience the magic of Venice with a gondola ride by the Grand Canal and the stunning Basilica di Santa Maria della Salute at sunset.",
         link: "#"
     },
     {
-        img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
-        title: "Singapore Tech Conference",
-        subtitle: "Asia · Conferences",
-        desc: "Cutting-edge conference facilities in Singapore's business district. Includes team-building and networking events.",
+        img: "/images/italy2.jpg",
+        title: "Rialto Bridge Night Lights",
+        subtitle: "Venice, Italy · Landmarks",
+        desc: "Stroll across the historic Rialto Bridge, beautifully illuminated at night, and explore the vibrant heart of Venice.",
         link: "#"
     },
     {
-        img: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=600&q=80",
-        title: "Dubai Leadership Retreat",
-        subtitle: "Middle East · Team Retreats",
-        desc: "Luxury desert resorts and world-class meeting spaces for your next leadership offsite or incentive program.",
+        img: "/images/italy3.jpg",
+        title: "St. Mark’s Basilica & Piazza San Marco",
+        subtitle: "Venice, Italy · Heritage",
+        desc: "Marvel at the intricate mosaics of St. Mark’s Basilica and soak in the atmosphere of Venice’s most famous square.",
         link: "#"
     },
     {
-        img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
-        title: "New York VIP Experience",
-        subtitle: "Americas · VIP Travel",
-        desc: "Exclusive access to venues, private transfers, and curated experiences in Manhattan.",
+        img: "/images/india1.jpg",
+        title: "Jaipur Royal Heritage Tour",
+        subtitle: "India · Cultural Tours",
+        desc: "Discover the majestic palaces and vibrant bazaars of Jaipur. Experience royal hospitality in the Pink City.",
         link: "#"
     },
     {
-        img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
-        title: "Paris Strategy Summit",
-        subtitle: "Europe · Conferences",
-        desc: "Elegant Parisian venues for strategic planning, with fine dining and cultural immersions.",
+        img: "/images/india2.jpg",
+        title: "Taj Mahal Sunrise Experience",
+        subtitle: "India · World Wonders",
+        desc: "Witness the breathtaking beauty of the Taj Mahal at dawn, with guided tours and local insights in Agra.",
         link: "#"
     },
     {
-        img: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=600&q=80",
-        title: "Tokyo Innovation Tour",
-        subtitle: "Asia · Team Retreats",
-        desc: "Tokyo's tech scene meets cultural visits, workshops, and networking.",
+        img: "/images/india3.jpg",
+        title: "Amritsar Golden Temple Visit",
+        subtitle: "India · Spiritual Journeys",
+        desc: "Explore the serene Golden Temple in Amritsar, enjoy traditional langar, and discover Sikh heritage.",
         link: "#"
     },
+    {
+        img: "/images/thailand1.jpg",
+        title: "White Temple Wonders, Chiang Rai",
+        subtitle: "Thailand · Architectural Marvels",
+        desc: "Be mesmerized by the dazzling White Temple (Wat Rong Khun) in Chiang Rai, a modern masterpiece of Thai artistry and spirituality.",
+        link: "#"
+    },
+    {
+        img: "/images/thailand2.jpg",
+        title: "Maya Bay Paradise, Phi Phi Islands",
+        subtitle: "Thailand · Tropical Escapes",
+        desc: "Swim in the crystal-clear waters of Maya Bay, surrounded by dramatic limestone cliffs and lush greenery, made famous by the movie 'The Beach.'",
+        link: "#"
+    },
+    {
+        img: "/images/thailand3.jpg",
+        title: "Railay Beach Adventure, Krabi",
+        subtitle: "Thailand · Beach Retreats",
+        desc: "Relax on the powdery sands of Railay Beach, explore hidden caves, and enjoy rock climbing with breathtaking ocean views.",
+        link: "#"
+    }
 ];
 
 const Destinations = () => (
     <div className="destination-root">
-
-        {/* Section 1: Modern Destination Grid */}
-        <div className="dest-grid-section">
-            <h2 className="dest-grid-title">Explore Our Destinations</h2>
-            <div className="dest-image-grid">
-                <div className="dest-image-card small-card" style={{ gridArea: 'small1' }}>
+        <h2 className="dest-grid-title">Explore Our Destinations</h2>
+        <div className="dest-masonry-grid">
+            {destinationCards.map((card, idx) => (
+                <div className="dest-masonry-card" key={idx}>
                     <img
-                        src={destinationGrid[0].img || getDummyImage(destinationGrid[0].name)}
-                        alt={destinationGrid[0].name}
-                        onError={e => { e.target.onerror = null; e.target.src = getDummyImage(destinationGrid[0].name); }}
+                        src={card.img ? card.img : getDummyImage(card.title)}
+                        alt={card.title}
+                        onError={e => { e.target.onerror = null; e.target.src = getDummyImage(card.title); }}
                     />
-                    <div className="dest-card-overlay">
-                        <span>{destinationGrid[0].name}</span>
-                    </div>
-                </div>
-                <div className="dest-image-card small-card" style={{ gridArea: 'small2' }}>
-                    <img
-                        src={destinationGrid[1].img || getDummyImage(destinationGrid[1].name)}
-                        alt={destinationGrid[1].name}
-                        onError={e => { e.target.onerror = null; e.target.src = getDummyImage(destinationGrid[1].name); }}
-                    />
-                    <div className="dest-card-overlay">
-                        <span>{destinationGrid[1].name}</span>
-                    </div>
-                </div>
-                <div className="dest-image-card large-card" style={{ gridArea: 'large' }}>
-                    <img
-                        src={destinationGrid[3].img || getDummyImage(destinationGrid[3].name)}
-                        alt={destinationGrid[3].name}
-                        onError={e => { e.target.onerror = null; e.target.src = getDummyImage(destinationGrid[3].name); }}
-                    />
-                    <div className="dest-card-overlay">
-                        <span>{destinationGrid[3].name}</span>
-                    </div>
-                </div>
-                <div className="dest-image-card small-card" style={{ gridArea: 'small3' }}>
-                    <img
-                        src={destinationGrid[2].img || getDummyImage(destinationGrid[2].name)}
-                        alt={destinationGrid[2].name}
-                        onError={e => { e.target.onerror = null; e.target.src = getDummyImage(destinationGrid[2].name); }}
-                    />
-                    <div className="dest-card-overlay">
-                        <span>{destinationGrid[2].name}</span>
-                    </div>
-                </div>
-                <div className="dest-image-card small-card" style={{ gridArea: 'small4' }}>
-                    <img
-                        src={destinationGrid[4].img || getDummyImage(destinationGrid[4].name)}
-                        alt={destinationGrid[4].name}
-                        onError={e => { e.target.onerror = null; e.target.src = getDummyImage(destinationGrid[4].name); }}
-                    />
-                    <div className="dest-card-overlay">
-                        <span>{destinationGrid[4].name}</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        {/* Section 2: Card Grid */}
-        <div className="dest-card-section">
-            <div className="dest-card-header">
-                <h2 className="dest-card-title">Featured Executive Destinations</h2>
-                <p className="dest-card-punchline">
-                    Discover handpicked venues and retreats designed for unforgettable business journeys and luxury escapes.
-                </p>
-            </div>
-            <div className="dest-card-grid">
-                {destinationCards.map((card, idx) => (
-                    <div className="dest-card" key={idx}>
-                        <img
-                            src={card.img ? card.img : getDummyImage(card.title)}
-                            alt={card.title}
-                            onError={e => { e.target.onerror = null; e.target.src = getDummyImage(card.title); }}
-                        />
-                        <div className="dest-card-overlay">
-                            <div className="dest-card-body">
-                                <h3>{card.title}</h3>
-                                <div className="dest-card-sub">{card.subtitle}</div>
-                                <p>{card.desc}</p>
-                                <a href={card.link} className="dest-card-link">View Details</a>
-                            </div>
+                    <div className="dest-masonry-overlay">
+                        <div className="dest-masonry-content">
+                            <h3>{card.title}</h3>
+                            <div className="dest-card-sub">{card.subtitle}</div>
+                            <p>{card.desc}</p>
+                            <a href={card.link} className="dest-card-link">View Details</a>
                         </div>
                     </div>
-                ))}
-            </div>
+                </div>
+            ))}
         </div>
     </div>
 );

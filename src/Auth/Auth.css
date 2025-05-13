@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:700,900&display=swap');
+
+.auth-card {
+  position: relative;
+  background: #f8fafd; /* Softer light gray background */
+  padding: 1.4rem 1.1rem 1.1rem 1.1rem; /* Smaller, more compact padding */
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+  min-width: 320px;
+  max-width: 90vw;
+  margin: 0 auto;
+  max-height: 82vh;
+  text-align: center;
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.auth-close-btn {
+  position: absolute;
+  top: 10px; /* Tighter spacing */
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #888;
+  cursor: pointer;
+  z-index: 10;
+  transition: color 0.2s;
+}
+
+.auth-close-btn:hover {
+  color: #007bff;
+}
+
+.auth-card h2 {
+  margin-bottom: 1.1rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.auth-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  text-align: left;
+}
+
+.auth-card label {
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 0.18rem;
+  display: block;
+  font-size: 0.95rem;
+}
+
+.auth-card input {
+  padding: 0.55rem 0.8rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1.5px solid #ccc;
+  transition: border-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+  background: #f6f6fb;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.auth-card .btn {
+  background-color: #007bff;
+  color: white;
+  padding: 0.6rem 0;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.35rem;
+  transition: background-color 0.2s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.auth-card .btn:hover {
+  background-color: #0056b3;
+}
+
+.auth-card .btn-link {
+  background: none;
+  border: none;
+  color: #007bff;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  margin-left: 0.18rem;
+}
+
+.auth-card .btn-link:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.auth-card p {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .auth-card {
+    width: 95vw;
+    padding: 1rem 0.7rem;
+    min-width: unset;
+  }
+}
