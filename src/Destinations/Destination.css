@@ -1,5 +1,6 @@
 .destination-root {
   max-width: 1200px;
+  height: fit-content;
   margin: 0 auto;
   padding: 2rem 1rem;
   background: #fafaff;
@@ -114,17 +115,15 @@
   border: 1px solid #f9d923;
 }
 
-/* Responsive: 2 columns on tablet, 1 on mobile */
+
 @media (max-width: 900px) {
-  .dest-masonry-grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    aspect-ratio: 2 / 5;
+  .destination-root{
+    height: 100vh;
+    overflow: scroll;
   }
-}
-@media (max-width: 600px) {
   .dest-masonry-grid {
     grid-template-columns: 1fr;
+    height: 250vh;
     grid-template-rows: repeat(9, 1fr);
     aspect-ratio: 1 / 3;
   }
