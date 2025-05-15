@@ -5,7 +5,8 @@ const Contactus = () => {
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
-        gender: '',
+        company: '',
+        role: '',
         interests: [],
         country: '',
         message: ''
@@ -28,12 +29,14 @@ const Contactus = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log(formData);
-        alert('Form submitted!');
+        alert('Thank you! Our corporate travel team will reach out shortly.');
     };
 
     return (
         <div className="form-container">
-            <h2>Contact Us</h2>
+            <h2>Corporate Travel Enquiry</h2>
+            <p className="form-subtitle">Let us handle your next business trip — seamless and professional.</p>
+
             <form onSubmit={handleSubmit} className="contact-form">
                 <div className="form-group">
                     <label>Full Name</label>
@@ -46,38 +49,40 @@ const Contactus = () => {
                 </div>
 
                 <div className="form-group">
-                    <label>Gender</label>
-                    <div className="radio-group">
-                        <label><input type="radio" name="gender" value="Male" checked={formData.gender === 'Male'} onChange={handleChange} /> Male</label>
-                        <label><input type="radio" name="gender" value="Female" checked={formData.gender === 'Female'} onChange={handleChange} /> Female</label>
-                    </div>
+                    <label>Company Name</label>
+                    <input type="text" name="company" value={formData.company} onChange={handleChange} required />
                 </div>
 
                 <div className="form-group">
-                    <label>Interests</label>
+                    <label>Role / Designation</label>
+                    <input type="text" name="role" value={formData.role} onChange={handleChange} required />
+                </div>
+
+                <div className="form-group">
+                    <label>Travel Interests</label>
                     <div className="checkbox-group">
-                        <label><input type="checkbox" name="interests" value="Coding" onChange={handleChange} checked={formData.interests.includes('Coding')} /> Coding</label>
-                        <label><input type="checkbox" name="interests" value="Design" onChange={handleChange} checked={formData.interests.includes('Design')} /> Design</label>
-                        <label><input type="checkbox" name="interests" value="Marketing" onChange={handleChange} checked={formData.interests.includes('Marketing')} /> Marketing</label>
+                        <label><input type="checkbox" name="interests" value="Business Retreats" onChange={handleChange} checked={formData.interests.includes('Business Retreats')} /> Business Retreats</label>
+                        <label><input type="checkbox" name="interests" value="Team Building" onChange={handleChange} checked={formData.interests.includes('Team Building')} /> Team Building</label>
+                        <label><input type="checkbox" name="interests" value="Executive Meetings" onChange={handleChange} checked={formData.interests.includes('Executive Meetings')} /> Executive Meetings</label>
                     </div>
                 </div>
 
                 <div className="form-group">
-                    <label>Country</label>
+                    <label>Preferred Destination</label>
                     <select name="country" value={formData.country} onChange={handleChange} required>
                         <option value="">Select</option>
                         <option value="India">India</option>
-                        <option value="USA">USA</option>
-                        <option value="UK">UK</option>
+                        <option value="Thailand">Thailand</option>
+                        <option value="Italy">Italy</option>
                     </select>
                 </div>
 
                 <div className="form-group">
-                    <label>Message</label>
+                    <label>Message / Specific Requirements</label>
                     <textarea name="message" rows="4" value={formData.message} onChange={handleChange}></textarea>
                 </div>
 
-                <button type="submit" className="submit-btn">Submit</button>
+                <button type="submit" className="submit-btn">Submit Request</button>
             </form>
         </div>
     );

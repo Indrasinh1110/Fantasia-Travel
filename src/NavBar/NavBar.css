@@ -90,10 +90,11 @@
     padding: 0 10px;
   }
   .ft-logo {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   .ft-navbar-right {
     gap: 8px;
+    display: none;
   }
   .ft-nav-btn {
     padding: 7px 14px;

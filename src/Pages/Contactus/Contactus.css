@@ -1,57 +1,83 @@
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  grid-auto-rows: 10px; /* base row height */
-  gap: 10px;
-  padding: 1rem;
-  background-color: #fefefe;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.form-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
 }
 
-/* Masonry effect: mix row spans for variety */
-.grid-item {
-  background: #fff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  transition: transform 0.3s ease;
+h2 {
+  text-align: center;
+  color: #1f2d3d;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.form-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.contact-form .form-group {
+  margin-bottom: 20px;
+}
+
+.contact-form label {
   display: block;
-  break-inside: avoid;
-  max-width: 95%; /* Less than 100% */
-  margin: 0 auto;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #444;
 }
 
-/* Vary the heights for a masonry look */
-.grid-item:nth-child(3n) {
-  grid-row: span 18;
-}
-.grid-item:nth-child(4n) {
-  grid-row: span 16;
-}
-.grid-item:nth-child(5n) {
-  grid-row: span 14;
-}
-.grid-item:not(:nth-child(3n)):not(:nth-child(4n)):not(:nth-child(5n)) {
-  grid-row: span 12;
-}
-
-.grid-item img {
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form select,
+.contact-form textarea {
   width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-  margin: 0;
-  vertical-align: middle;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  transition: border 0.3s ease;
 }
 
-/* Responsive tweaks */
-@media (max-width: 600px) {
-  .grid-container {
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 6px;
-    padding: 0.5rem;
-  }
-  .grid-item {
-    max-width: 99%;
-  }
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #1f8ef1;
+  outline: none;
+  background-color: #fff;
+}
+
+.checkbox-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.checkbox-group input {
+  margin-right: 8px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #1f8ef1;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0e7bdc;
 }
